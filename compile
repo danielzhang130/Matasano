@@ -1,0 +1,5 @@
+#!/bin/bash
+
+s="g++ -std=c++14 $1.cc $2 -lm -lstdc++ -o $1.out -g"
+echo $s
+`$s`
