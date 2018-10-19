@@ -49,13 +49,25 @@ int main(){
     while(start < in.size()){
         int bytes = 0;
         string sub = in.substr(start, 6); //three bytes
+        int originalSize = sub.size();
+        while(sub.size() < 6){
+            sub.append("0");
+        }
         for( int i = 0; i < 6; i ++){
             int c = stoi(string(1, sub[i]), nullptr, 16);
             bytes = bytes << 4;
             bytes = bytes | c;
         }
-
-        ss << encodeB64(bytes);
+        string b64 = encodeB64(bytes);
+        if (originalSize == 4){
+            b64 = b64.substr(0, 3);
+            b64 = b64.append("=");
+        }
+        else if (originalSize == 2){
+            b64 = b64.substr(0, 2);
+            b64 = b64.append("==");
+        }
+        ss << b64;
         start += 6;
 
     }
