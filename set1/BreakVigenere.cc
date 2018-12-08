@@ -1,49 +1,8 @@
 #include "1ByteXOR.cc"
+#include "B642Hex.cc"
 #include <map>
 #include <iterator>
 #include <exception>
-
-vector<int> _b2hex(string b64){
-    map<int, int> b64Table;
-    for(int i = 0; i < 26; i++){
-        b64Table[65+i] = i;
-    }
-    for(int i = 0; i < 26; i++){
-        b64Table[97+i] = i+26;
-    }
-    for(int i = 0; i < 10; i++){
-        b64Table[48+i] = i+52;
-    }
-    b64Table['+'] = 62;
-    b64Table['/'] = 63;
-    b64Table['='] = 0;
-    int sum = 0;
-    for(size_t i = 0; i < b64.size(); i++){
-        sum = sum << 6;
-        sum += b64Table[b64[i]];
-    }
-    vector<int> r;
-    int end = -1;
-    if('=' == b64[2]){
-        end = 15;
-    }
-    else if('=' == b64[3]){
-        end = 7;
-    }
-    for(int i = 23; i > end; i--){
-        r.push_back((sum>>i) & 1);
-    }
-    return r;
-}
-
-vector<int> b64toHex(string b64){
-    vector<int> hex;
-    for(size_t i = 0; i < b64.size(); i+=4){
-        vector<int> temp = _b2hex(b64.substr(i,4));
-        hex.insert(hex.end(), temp.begin(), temp.end());
-    }
-    return hex;
-}
 
 int distance(vector<int> a, vector<int> b){
     vector<int> diff = fixedXOR(a, b);
@@ -67,7 +26,7 @@ int main(){
         b64.append(s);
     }
 
-    vector<int> hex = b64toHex(b64);
+    vector<int> hex = b64toHex(b64, 1);
     //for(int i:hex){
     //    cout << i;
     //}
