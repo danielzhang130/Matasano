@@ -1,5 +1,5 @@
 #!/bin/bash
 
-s="g++ -std=c++14 -g -Wall $@ -lcrypto -lm -lstdc++ -o ${1%.*}.out"
+s="g++ -std=c++14 -g -Wall $@ -l:libcrypto.so.1.1 -lm -lstdc++ -o ${1%.*}.out"
 echo $s
 `$s`
