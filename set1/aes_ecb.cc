@@ -125,3 +125,15 @@ vector<int> aes_ecb_encrypt(string _key, vector<int> _hex){
 
     return ret;
 }
+
+vector<int> aes_ecb_encrypt(vector<int> _key, vector<int> _char){
+    string _k;
+    _k.append(_key.begin(), _key.end());
+    return aes_ecb_encrypt(_k, _char);
+}
+
+vector<int> aes_ecb_decrypt(vector<int> _key, vector<int> _char){
+    string _k;
+    _k.append(_key.begin(), _key.end());
+    return aes_ecb_decrypt(_k, _char);
+}

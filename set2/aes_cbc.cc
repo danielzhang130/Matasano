@@ -69,3 +69,15 @@ vector<int> aes_cbc_decrypt(string _key, vector<int> _char, vector<int> _iv){
     unpad(out);
     return out;
 }
+
+vector<int> aes_cbc_encrypt(vector<int> _key, vector<int> _char, vector<int> _iv){
+    string _k;
+    _k.append(_key.begin(), _key.end());
+    return aes_cbc_encrypt(_k, _char, _iv);
+}
+
+vector<int> aes_cbc_decrypt(vector<int> _key, vector<int> _char, vector<int> _iv){
+    string _k;
+    _k.append(_key.begin(), _key.end());
+    return aes_cbc_decrypt(_k, _char, _iv);
+}
