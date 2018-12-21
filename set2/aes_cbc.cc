@@ -1,5 +1,5 @@
-#include "../set1/aes_ecb.cc"
-#include "../set1/FixedXOR.cc"
+#include "../aes/aes_ecb.cc"
+#include "../bitops/FixedXOR.cc"
 #include <vector>
 #include <stdexcept>
 

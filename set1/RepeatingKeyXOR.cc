@@ -1,4 +1,4 @@
-#include "FixedXOR.cc"
+#include "../bitops/FixedXOR.cc"
 
 int main(){
     vector<vector<int> > lines;

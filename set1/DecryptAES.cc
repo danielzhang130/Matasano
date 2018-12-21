@@ -1,5 +1,5 @@
-#include "B642Hex.cc"
-#include "aes_ecb.cc"
+#include "../bitops/B642Hex.cc"
+#include "../aes/aes_ecb.cc"
 #include <iostream>
 
 using std::cout;
