@@ -39,3 +39,11 @@ void unpad(vector<int>& s){
         c--;
     }
 }
+
+// evil
+void validate_unpad(vector<int>& s){
+    if(!isValidPadding(s)){
+        throw runtime_error("ERROR: invalid padding.");
+    }
+    unpad(s);
+}
