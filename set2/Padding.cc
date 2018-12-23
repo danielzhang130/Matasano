@@ -14,16 +14,25 @@ void pad(vector<int>& s, unsigned int blockSize){
     }
 }
 
-void unpad(vector<int>& s){
+bool isValidPadding(const vector<int>& s){
     int sz = s.size();
     int c = s[sz-1];
     if(c >= sz){
-        return;
+        return false;
     }
     for(int i = 1; i < c; i++){
         if(s[sz-1-i] != c){
-            return;
+            return false;
         }
+    }
+    return true;
+}
+
+void unpad(vector<int>& s){
+    int sz = s.size();
+    int c = s[sz-1];
+    if(!isValidPadding(s)){
+        return;
     }
     while(c){
         s.pop_back();

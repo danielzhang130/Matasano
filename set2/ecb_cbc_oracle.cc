@@ -38,7 +38,7 @@ vector<int> ecb_or_cbc_encrypt(vector<int> plaintext){
     return ciphertext;
 }
 
-void detection_oracle(vector<int> (*f)(vector<int> plaintext)){
+void detection_oracle(vector<int> (*f)(vector<int>)){
     vector<int> testString(43, 0);
     vector<int> result = f(testString);
     vector<vector<int>> blocks;
