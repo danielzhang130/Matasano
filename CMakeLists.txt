@@ -20,5 +20,6 @@ message(STATUS "Getting GoogleTest library")
 execute_process(COMMAND git submodule update --init -- googletest
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
+set(BUILD_GMOCK OFF)
 add_subdirectory(googletest)
 target_link_libraries(Matasano PUBLIC gtest_main)
