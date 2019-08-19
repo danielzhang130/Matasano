@@ -1,4 +1,7 @@
 *.out
 in
 out
-*.txt
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
