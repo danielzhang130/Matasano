@@ -1,3 +1,5 @@
+#ifndef AES_ECB_H
+#define AES_ECB_H
 #include <openssl/evp.h>
 #include "../bitops/Padding.cc"
 #include <cstdlib>
@@ -137,3 +139,5 @@ vector<int> aes_ecb_decrypt(vector<int> _key, vector<int> _char){
     _k.append(_key.begin(), _key.end());
     return aes_ecb_decrypt(_k, _char);
 }
+
+#endif

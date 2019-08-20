@@ -1,3 +1,5 @@
+#ifndef AES_CBC_H
+#define AES_CBC_H
 #include "../aes/aes_ecb.cc"
 #include "../bitops/FixedXOR.cc"
 #include <vector>
@@ -81,3 +83,5 @@ vector<int> aes_cbc_decrypt(vector<int> _key, vector<int> _char, vector<int> _iv
     _k.append(_key.begin(), _key.end());
     return aes_cbc_decrypt(_k, _char, _iv);
 }
+
+#endif

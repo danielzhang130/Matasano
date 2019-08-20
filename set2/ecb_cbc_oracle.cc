@@ -1,12 +1,17 @@
+#ifndef ECB_CBC_ORACLE_H
+#define ECB_CBC_ORACLE_H
 #include "../aes/aes_cbc.cc"
 #include <openssl/rand.h>
 #include <vector>
 #include <stdexcept>
 #include <string>
+#include <iostream>
 
 using std::vector;
 using std::runtime_error;
 using std::to_string;
+using std::cout;
+using std::endl;
 
 vector<int> random(int size){
     unsigned char* c = (unsigned char*) malloc(size);
@@ -61,3 +66,5 @@ void detection_oracle(vector<int> (*f)(vector<int>)){
         cout << "CBC mode" << endl;
     }
 }
+
+#endif

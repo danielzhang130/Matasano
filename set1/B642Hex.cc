@@ -1,3 +1,5 @@
+#ifndef B64_2_HEX_H
+#define B64_2_HEX_H
 #include <map>
 #include <vector>
 #include <stdexcept>
@@ -68,4 +70,4 @@ vector<int> b64toHex(string b64, outputFormat of){
     return hex;
 }
 
-
+#endif

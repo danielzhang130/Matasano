@@ -1,10 +1,10 @@
+#ifndef FIXED_XOR_H
+#define FIXED_XOR_H
 #include <iostream>
-#include <string>
 #include <cassert>
-#include <sstream>
 #include <vector>
 
-using namespace std;
+using std::vector;
 
 vector<int> fixedXOR(vector<int> a, vector<int> b){
     assert(a.size() == b.size());
@@ -42,3 +42,5 @@ vector<int> fixedXOR(vector<int> a, vector<int> b){
 //    cout << endl;
 //    return 0;
 //}
+
+#endif
