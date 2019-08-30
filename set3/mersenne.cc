@@ -1,3 +1,5 @@
+#ifndef MERSENNE_H
+#define MERSENNE_H
 #include <cstddef>
 
 class Mersenne{
@@ -68,3 +70,4 @@ class Mersenne{
             return ((1ull << 33) -1) & y; // lowest w bits of y
         }
 };
+#endif

@@ -1,7 +1,8 @@
 #ifndef ECB_BYTE_DECRYPT_MULTITHREAD_H
 #define ECB_BYTE_DECRYPT_MULTITHREAD_H
 #include "../bitops/B642Hex.cc"
-#include "ecb_cbc_oracle.cc"
+#include "../bitops/random.cc"
+#include "../aes/aes_ecb.cc"
 #include <vector>
 #include <stdexcept>
 #include <map>
