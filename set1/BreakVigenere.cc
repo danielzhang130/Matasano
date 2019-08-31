@@ -1,5 +1,5 @@
 #include "1ByteXOR.cc"
-#include "../bitops/B642Hex.cc"
+#include "../bitops/B642Hex.h"
 #include <map>
 #include <iterator>
 #include <exception>

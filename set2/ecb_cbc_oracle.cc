@@ -1,7 +1,9 @@
 #ifndef ECB_CBC_ORACLE_H
 #define ECB_CBC_ORACLE_H
-#include "../bitops/random.cc"
-#include "../aes/aes_cbc.cc"
+#include "../bitops/random.h"
+#include "../bitops/FixedXOR.h"
+#include "../aes/aes_cbc.h"
+#include "../aes/aes_ecb.h"
 #include <openssl/rand.h>
 #include <vector>
 #include <stdexcept>

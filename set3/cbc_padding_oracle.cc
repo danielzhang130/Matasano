@@ -1,14 +1,21 @@
-#include "../aes/aes_cbc.cc"
-#include "../bitops/B642Hex.cc"
-#include "../bitops/random.cc"
+#include "../aes/aes_cbc.h"
+#include "../bitops/B642Hex.h"
+#include "../bitops/random.h"
+#include "../bitops/FixedXOR.h"
+#include "../bitops/Padding.h"
 #include <vector>
 #include <stdexcept>
 #include <iostream>
+#include <string>
 
 namespace cbc_padding_oracle{
     using std::vector;
     using std::runtime_error;
     using std::cout;
+    using std::cerr;
+    using std::endl;
+    using std::to_string;
+    using std::string;
 
     class Server{
         vector<int> key;

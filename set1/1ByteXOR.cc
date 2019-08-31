@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../bitops/FixedXOR.cc"
+#include "../bitops/FixedXOR.h"
 
 using namespace std;
 

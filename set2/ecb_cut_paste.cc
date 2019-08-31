@@ -1,5 +1,5 @@
-#include "../aes/aes_ecb.cc"
-#include "../bitops/random.cc"
+#include "../aes/aes_ecb.h"
+#include "../bitops/random.h"
 #include <map>
 #include <string>
 #include <vector>

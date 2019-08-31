@@ -1,5 +1,6 @@
-#include "../aes/aes_cbc.cc"
-#include "../bitops/random.cc"
+#include "../aes/aes_cbc.h"
+#include "../bitops/random.h"
+#include "../bitops/FixedXOR.h"
 #include <vector>
 #include <string>
 #include <iostream>

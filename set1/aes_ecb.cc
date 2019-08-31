@@ -1,19 +1,11 @@
-#ifndef AES_ECB_H
-#define AES_ECB_H
+#include "../aes/aes_ecb.h"
+#include "../bitops/Padding.h"
 #include <openssl/evp.h>
-#include "../bitops/Padding.cc"
-#include <cstdlib>
-#include <string>
-#include <iostream>
-#include <vector>
 #include <stdexcept>
 #include <cmath>
 #include <cstring>
 
 using std::string;
-using std::cin;
-using std::cerr;
-using std::endl;
 using std::vector;
 using std::runtime_error;
 
@@ -139,5 +131,3 @@ vector<int> aes_ecb_decrypt(vector<int> _key, vector<int> _char){
     _k.append(_key.begin(), _key.end());
     return aes_ecb_decrypt(_k, _char);
 }
-
-#endif

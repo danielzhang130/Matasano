@@ -1,5 +1,5 @@
 #include "mersenne.cc"
-#include "../bitops/random.cc"
+#include "../bitops/random.h"
 #include <thread>
 
 namespace crack_seed{

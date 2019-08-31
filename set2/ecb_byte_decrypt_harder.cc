@@ -1,6 +1,6 @@
-#include "../bitops/B642Hex.cc"
-#include "../bitops/random.cc"
-#include "../aes/aes_ecb.cc"
+#include "../bitops/B642Hex.h"
+#include "../bitops/random.h"
+#include "../aes/aes_ecb.h"
 #include <vector>
 #include <stdexcept>
 #include <map>

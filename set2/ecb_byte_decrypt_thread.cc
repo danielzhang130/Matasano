@@ -1,14 +1,16 @@
 #ifndef ECB_BYTE_DECRYPT_MULTITHREAD_H
 #define ECB_BYTE_DECRYPT_MULTITHREAD_H
-#include "../bitops/B642Hex.cc"
-#include "../bitops/random.cc"
-#include "../aes/aes_ecb.cc"
+#include "../bitops/B642Hex.h"
+#include "../bitops/random.h"
+#include "../bitops/Padding.h"
+#include "../aes/aes_ecb.h"
 #include <vector>
 #include <stdexcept>
 #include <map>
 #include <string>
 #include <thread>
 #include <mutex>
+#include <iostream>
 
 namespace ecb_byte_decrypt_thread{
     using std::vector;
@@ -18,7 +20,9 @@ namespace ecb_byte_decrypt_thread{
     using std::thread;
     using std::mutex;
     using std::cout;
+    using std::cerr;
     using std::endl;
+    using std::string;
 
     vector<int> key;
 

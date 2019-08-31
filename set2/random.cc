@@ -1,7 +1,5 @@
-#ifndef RANDOM_H
-#define RANDOM_H
+#include "../bitops/random.h"
 #include <openssl/rand.h>
-#include <vector>
 #include <stdexcept>
 #include <string>
 
@@ -20,4 +18,3 @@ vector<int> random(int size){
     }
     return v;
 }
-#endif

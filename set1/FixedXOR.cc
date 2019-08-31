@@ -1,8 +1,5 @@
-#ifndef FIXED_XOR_H
-#define FIXED_XOR_H
-#include <iostream>
+#include "../bitops/FixedXOR.h"
 #include <cassert>
-#include <vector>
 
 using std::vector;
 
@@ -25,22 +22,3 @@ vector<int> fixedXOR(vector<int> a, vector<int> b){
 
     return out;
 }
-
-//int main(){
-//    string s, t;
-//    cin >> s;
-//    cin >> t;
-//    vector<int> a, b;
-//    for(size_t i = 0; i < s.size(); i++){
-//        a.push_back(stoi(s.substr(i, 1), nullptr, 16));
-//        b.push_back(stoi(t.substr(i, 1), nullptr, 16));
-//    }
-//    vector<int> result = fixedXOR(a,b);
-//    for(int i:result){
-//        cout << hex << i;
-//    }
-//    cout << endl;
-//    return 0;
-//}
-
-#endif

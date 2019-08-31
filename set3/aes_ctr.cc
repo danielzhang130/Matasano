@@ -1,8 +1,7 @@
-#include "../aes/aes_ecb.cc"
-#include "../bitops/FixedXOR.cc"
-#include <vector>
+#include "../aes/aes_ctr.h"
+#include "../aes/aes_ecb.h"
+#include "../bitops/FixedXOR.h"
 #include <algorithm>
-#include <cstdint>
 
 using std::vector;
 using std::reverse;
@@ -36,6 +35,3 @@ vector<int> aes_ctr_encrypt(vector<int> key, vector<int> plain, vector<int> nonc
     return cipher;
 }
 
-vector<int> aes_ctr_decrypt(vector<int> key, vector<int> cipher, vector<int> nonce){
-    return aes_ctr_encrypt(key, cipher, nonce);
-}

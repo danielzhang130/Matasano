@@ -23,3 +23,16 @@ execute_process(COMMAND git submodule update --init -- googletest
 set(BUILD_GMOCK OFF)
 add_subdirectory(googletest)
 target_link_libraries(Matasano PUBLIC gtest_main)
+
+add_subdirectory(set1)
+target_link_libraries(Matasano PUBLIC b64)
+target_link_libraries(Matasano PUBLIC fixed_xor)
+target_link_libraries(Matasano PUBLIC aes_ecb)
+
+add_subdirectory(set2)
+target_link_libraries(Matasano PUBLIC random)
+target_link_libraries(Matasano PUBLIC aes_cbc)
+target_link_libraries(Matasano PUBLIC padding)
+
+add_subdirectory(set3)
+target_link_libraries(Matasano PUBLIC aes_ctr)

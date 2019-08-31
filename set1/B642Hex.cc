@@ -1,7 +1,5 @@
-#ifndef B64_2_HEX_H
-#define B64_2_HEX_H
+#include "../bitops/B642Hex.h"
 #include <map>
-#include <vector>
 #include <stdexcept>
 
 using std::vector;
@@ -9,8 +7,6 @@ using std::string;
 using std::map;
 using std::logic_error;
 using std::to_string;
-
-typedef int outputFormat;
 
 vector<int> _b2hex(string b64, outputFormat of){
     map<int, int> b64Table;
@@ -69,5 +65,3 @@ vector<int> b64toHex(string b64, outputFormat of){
     }
     return hex;
 }
-
-#endif

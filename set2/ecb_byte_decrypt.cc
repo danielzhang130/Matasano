@@ -1,8 +1,9 @@
 #ifndef ECB_BYTE_DECRYPT_H
 #define ECB_BYTE_DECRYPT_H
-#include "../bitops/B642Hex.cc"
-#include "../bitops/random.cc"
-#include "../aes/aes_ecb.cc"
+#include "../bitops/B642Hex.h"
+#include "../bitops/random.h"
+#include "../bitops/Padding.h"
+#include "../aes/aes_ecb.h"
 #include <vector>
 #include <stdexcept>
 #include <map>
@@ -15,7 +16,9 @@ namespace ecb_byte_decrypt{
     using std::map;
     using std::to_string;
     using std::cout;
+    using std::cerr;
     using std::endl;
+    using std::string;
 
     vector<int> key;
 

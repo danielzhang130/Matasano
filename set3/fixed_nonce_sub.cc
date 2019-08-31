@@ -1,6 +1,6 @@
-#include "../aes/aes_ctr.cc"
-#include "../bitops/B642Hex.cc"
-#include "../bitops/random.cc"
+#include "../aes/aes_ctr.h"
+#include "../bitops/B642Hex.h"
+#include "../bitops/random.h"
 
 class Server{
     private:

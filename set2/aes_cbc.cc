@@ -1,12 +1,13 @@
-#ifndef AES_CBC_H
-#define AES_CBC_H
-#include "../aes/aes_ecb.cc"
-#include "../bitops/FixedXOR.cc"
+#include "../aes/aes_cbc.h"
+#include "../aes/aes_ecb.h"
+#include "../bitops/FixedXOR.h"
+#include "../bitops/Padding.h"
 #include <vector>
 #include <stdexcept>
 
 using std::runtime_error;
 using std::vector;
+using std::string;
 
 vector<int> aes_cbc_encrypt(string _key, vector<int> _char, vector<int> _iv){
     vector<int> out;
@@ -83,5 +84,3 @@ vector<int> aes_cbc_decrypt(vector<int> _key, vector<int> _char, vector<int> _iv
     _k.append(_key.begin(), _key.end());
     return aes_cbc_decrypt(_k, _char, _iv);
 }
-
-#endif
