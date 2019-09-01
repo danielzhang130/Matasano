@@ -4,6 +4,6 @@
 
 #define aes_ctr_decrypt aes_ctr_encrypt
 
-std::vector<int> aes_ctr_encrypt(std::vector<int> key, std::vector<int> plain, std::vector<int> nonce);
+std::vector<int> aes_ctr_encrypt(const std::vector<int>& key, const std::vector<int>& plain, std::vector<int> nonce);
 
 #endif

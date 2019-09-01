@@ -9,11 +9,11 @@ using std::runtime_error;
 using std::vector;
 using std::string;
 
-vector<int> aes_cbc_encrypt(string _key, vector<int> _char, vector<int> _iv){
+vector<int> aes_cbc_encrypt(const string& _key, const vector<int>& _char, const vector<int>& _iv){
     vector<int> out;
     vector<vector<int>> blocks;
     for(size_t i = 0; i < _char.size(); i+=16){
-        vector<int>::iterator end = (_char.end() > _char.begin() +i +16) ? _char.begin()+i+16 : _char.end();
+        auto end = (_char.end() > _char.begin() +i +16) ? _char.begin()+i+16 : _char.end();
         vector<int> t(_char.begin()+i, end);
         pad(t, 16);
         blocks.push_back(t);
@@ -39,7 +39,7 @@ vector<int> aes_cbc_encrypt(string _key, vector<int> _char, vector<int> _iv){
     return out;
 }
 
-vector<int> aes_cbc_decrypt(string _key, vector<int> _char, vector<int> _iv){
+vector<int> aes_cbc_decrypt(const string& _key, const vector<int>& _char, const vector<int>& _iv){
     vector<int> out;
     vector<vector<int>> blocks;
     for(size_t i = 0; i < _char.size(); i+=16){
@@ -73,13 +73,13 @@ vector<int> aes_cbc_decrypt(string _key, vector<int> _char, vector<int> _iv){
     return out;
 }
 
-vector<int> aes_cbc_encrypt(vector<int> _key, vector<int> _char, vector<int> _iv){
+vector<int> aes_cbc_encrypt(const vector<int>& _key, const vector<int>& _char, const vector<int>& _iv){
     string _k;
     _k.append(_key.begin(), _key.end());
     return aes_cbc_encrypt(_k, _char, _iv);
 }
 
-vector<int> aes_cbc_decrypt(vector<int> _key, vector<int> _char, vector<int> _iv){
+vector<int> aes_cbc_decrypt(const vector<int>& _key, const vector<int>& _char, const vector<int>& _iv){
     string _k;
     _k.append(_key.begin(), _key.end());
     return aes_cbc_decrypt(_k, _char, _iv);

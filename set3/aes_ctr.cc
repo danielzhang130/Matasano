@@ -6,13 +6,13 @@
 using std::vector;
 using std::reverse;
 
-vector<int> aes_ctr_encrypt(vector<int> key, vector<int> plain, vector<int> nonce){
+vector<int> aes_ctr_encrypt(const vector<int>& key, const vector<int>& plain, vector<int> nonce){
     reverse(nonce.begin(), nonce.end());
     uint64_t _counter = 0;
     vector<int> counter(8,0);
     vector<int> cipher;
 
-    for(vector<int>::iterator i = plain.begin(); i < plain.end(); i+=16){
+    for(auto i = plain.begin(); i < plain.end(); i+=16){
         for(int j = 0; j < 8; j++){
             counter[j] = (_counter >> (j*8)) & 255;
         }

@@ -3,7 +3,7 @@
 
 using std::vector;
 
-vector<int> fixedXOR(vector<int> a, vector<int> b){
+vector<int> fixedXOR(const vector<int>& a, const vector<int>& b){
     assert(a.size() == b.size());
     unsigned int x = 0;
     unsigned int y = 0;

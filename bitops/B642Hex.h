@@ -5,8 +5,6 @@
 
 typedef int outputFormat;
 
-std::vector<int> _b2hex(std::string b64, outputFormat of);
-
-std::vector<int> b64toHex(std::string b64, outputFormat of);
+std::vector<int> b64toHex(const std::string& b64, outputFormat of);
 
 #endif

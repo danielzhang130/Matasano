@@ -8,7 +8,7 @@ using std::map;
 using std::logic_error;
 using std::to_string;
 
-vector<int> _b2hex(string b64, outputFormat of){
+vector<int> _b2hex(const string& b64, outputFormat of){
     map<int, int> b64Table;
     for(int i = 0; i < 26; i++){
         b64Table[65+i] = i;
@@ -57,7 +57,7 @@ vector<int> _b2hex(string b64, outputFormat of){
     return r;
 }
 
-vector<int> b64toHex(string b64, outputFormat of){
+vector<int> b64toHex(const string& b64, outputFormat of){
     vector<int> hex;
     for(size_t i = 0; i < b64.size(); i+=4){
         vector<int> temp = _b2hex(b64.substr(i,4), of);

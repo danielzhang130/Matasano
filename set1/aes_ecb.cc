@@ -9,7 +9,7 @@ using std::string;
 using std::vector;
 using std::runtime_error;
 
-vector<int> aes_ecb_decrypt(string _key, vector<int> _hex){
+vector<int> aes_ecb_decrypt(const string& _key, const vector<int>& _hex){
     EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
 
     unsigned char* key = (unsigned char*) malloc(sizeof(char)*_key.size());
@@ -66,7 +66,7 @@ vector<int> aes_ecb_decrypt(string _key, vector<int> _hex){
     return ret;
 }
 
-vector<int> aes_ecb_encrypt(string _key, vector<int> _hex){
+vector<int> aes_ecb_encrypt(const string& _key, vector<int> _hex){
     EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
     int block = EVP_CIPHER_block_size(EVP_aes_128_ecb());
     
@@ -120,13 +120,13 @@ vector<int> aes_ecb_encrypt(string _key, vector<int> _hex){
     return ret;
 }
 
-vector<int> aes_ecb_encrypt(vector<int> _key, vector<int> _char){
+vector<int> aes_ecb_encrypt(const vector<int>& _key, vector<int> _char){
     string _k;
     _k.append(_key.begin(), _key.end());
     return aes_ecb_encrypt(_k, _char);
 }
 
-vector<int> aes_ecb_decrypt(vector<int> _key, vector<int> _char){
+vector<int> aes_ecb_decrypt(const vector<int>& _key, const vector<int>& _char){
     string _k;
     _k.append(_key.begin(), _key.end());
     return aes_ecb_decrypt(_k, _char);
