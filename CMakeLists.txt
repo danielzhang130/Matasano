@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2.3)
 project(Matasano)
-add_executable(Matasano test_all.cc)
+add_executable(Matasano src/test_all.cc)
 
 include(FindOpenSSL)
 if(${OPENSSL_VERSION} VERSION_LESS "1.1")
@@ -24,15 +24,13 @@ set(BUILD_GMOCK OFF)
 add_subdirectory(googletest)
 target_link_libraries(Matasano PUBLIC gtest_main)
 
-add_subdirectory(set1)
+add_subdirectory(src)
+
 target_link_libraries(Matasano PUBLIC b64)
 target_link_libraries(Matasano PUBLIC fixed_xor)
 target_link_libraries(Matasano PUBLIC aes_ecb)
-
-add_subdirectory(set2)
 target_link_libraries(Matasano PUBLIC random)
 target_link_libraries(Matasano PUBLIC aes_cbc)
 target_link_libraries(Matasano PUBLIC padding)
-
-add_subdirectory(set3)
 target_link_libraries(Matasano PUBLIC aes_ctr)
+
