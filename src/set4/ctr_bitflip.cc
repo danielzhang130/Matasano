@@ -45,9 +45,9 @@ namespace ctr_bitflip{
         vector<int> cipher(server.encrypt(_plain));
         string _target(";admin=true;");
         vector<int> target(_target.begin(), _target.end());
-        vector<int> key(fixedXOR(vector<int>(_plain.begin(), _plain.end()), vector<int>(cipher.begin() + 32, cipher.begin() + 48)));
+        vector<int> key(fixedXOR(vector<int>(_plain.begin(), _plain.end()), vector<int>(cipher.begin() + 32, cipher.begin() + 44)));
         vector<int> new_cipher(fixedXOR(key, target));
-        cipher.erase(cipher.begin() + 32, cipher.begin() + 48);
+        cipher.erase(cipher.begin() + 32, cipher.begin() + 44);
         cipher.insert(cipher.begin() + 32, new_cipher.begin(), new_cipher.end());
         return server.isAdmin(cipher);
     }
