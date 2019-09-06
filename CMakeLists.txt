@@ -33,4 +33,5 @@ target_link_libraries(Matasano PUBLIC random)
 target_link_libraries(Matasano PUBLIC aes_cbc)
 target_link_libraries(Matasano PUBLIC padding)
 target_link_libraries(Matasano PUBLIC aes_ctr)
+target_link_libraries(Matasano PUBLIC sha1)
 
